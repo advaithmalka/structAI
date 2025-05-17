@@ -17,7 +17,7 @@ export default function Home() {
   const dotRef = useRef(null);
   const textareaRef = useRef(null);
 
-  // const SERVER_URL = "http://127.0.0.1:5000/" // dev
+  // const SERVER_URL = "http://127.0.0.1:8000/" // dev
   const SERVER_URL = "https://advaithmalka-structai-api.hf.space/" // prod
   
   useEffect(() => {
@@ -77,7 +77,7 @@ export default function Home() {
       }
       return false;
     }
-  })
+  }, [])
   
   // Function to handle form submission
   const handleSubmit = async (e) => {
