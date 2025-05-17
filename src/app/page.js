@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import { ChevronDownIcon, CheckIcon } from '@heroicons/react/20/solid'; // Example, adjust if not using heroicons
 import axios from 'axios';
 import ReactMarkdown from 'react-markdown'; // Import ReactMarkdown
@@ -34,7 +34,7 @@ export default function Home() {
   }, [chatHistory, isClient]);
 
   // Function to render DOT diagrams using d3-graphviz
-  const renderDotDiagram = async (dotCode) => {
+  const renderDotDiagram = useCallback(async (dotCode) => {
     if (!dotCode || !dotRef.current) return null;
     
     try {
@@ -74,7 +74,7 @@ export default function Home() {
       }
       return false;
     }
-  };
+  })
   
   // Function to handle form submission
   const handleSubmit = async (e) => {
