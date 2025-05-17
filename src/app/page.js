@@ -16,6 +16,9 @@ export default function Home() {
   const [followUpContext, setFollowUpContext] = useState(null);
   const dotRef = useRef(null);
   const textareaRef = useRef(null);
+
+  // const SERVER_URL = "http://127.0.0.1:5000/" // dev
+  const SERVER_URL = "https://advaithmalka-structai-api.hf.space/" // prod
   
   useEffect(() => {
     setIsClient(true);
@@ -98,7 +101,7 @@ export default function Home() {
     }
 
     try {
-      const response = await axios.post('http://localhost:8000/query', requestData, {
+      const response = await axios.post(SERVER_URL + 'query', requestData, {
         headers: {
           'Content-Type': 'application/json',
           'Accept': 'application/json'
