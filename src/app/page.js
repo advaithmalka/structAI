@@ -312,7 +312,7 @@ export default function Home() {
             <h3 className="text-xl font-semibold mb-2 text-blue-300">Your Question:</h3>
             <p className="mb-4 text-gray-300">{currentChat.question}</p>
             
-            <h3 className="text-xl font-semibold mb-2 text-blue-300">StructAI's Explanation:</h3>
+            <h3 className="text-xl font-semibold mb-2 text-blue-300">StructAI`&apos;`s Explanation:</h3>
             <div className="prose prose-invert max-w-none text-gray-300">
               <ReactMarkdown>{currentChat.answer}</ReactMarkdown>
             </div>
